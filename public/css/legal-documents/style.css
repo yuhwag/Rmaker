@@ -1,0 +1,126 @@
+body {
+    font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.body-legalDocu .legalDocu-header{
+    /* background: url(../_assets_all/imgs_pics/pics-about/cheerful-diverse-friends-2.jpg) center no-repeat;
+    background-size: cover; */
+    background-color: #0c406b;
+    min-height: 370px;
+    padding-bottom: 60px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.body-legalDocu .legalDocu-header h1{
+    margin-top: 70px;
+    margin-bottom: 20px;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 4rem;
+    text-align: center;
+}
+.body-legalDocu .legalDocu-header p{
+    color: #ffffffd1;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.body-legalDocu .legalDocu-header .header-menu{
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.body-legalDocu .legalDocu-header .header-menu .tab-active-bg{
+    background: #fff;
+    width: 170px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    transition: ease .25s;
+}
+.body-legalDocu .legalDocu-header .header-menu .tab-active-bg.tab-0{
+    right: 50%;
+    left: 0;
+    transition: ease .25s;
+}
+.body-legalDocu .legalDocu-header .header-menu .tab-active-bg.tab-1{
+    left: 50%;
+    right: 0;
+    transition: ease .25s;
+}
+.body-legalDocu .legalDocu-header .header-menu .menu-tabs{
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+    width: 170px;
+    padding: 10px 25px;
+    text-wrap: nowrap;
+    transition: ease .25s;
+    z-index: 1;
+}
+.body-legalDocu .legalDocu-header .header-menu .menu-tabs:hover{
+    background: #ffffff30;
+    transition: ease .25s;
+}
+.body-legalDocu .legalDocu-header .header-menu .tab-active{
+    color: #0c406b;
+    font-weight: 600;
+    transition: ease .25s;
+}
+
+/* terms */
+.body-legalDocu .tos-content{
+    padding-bottom: 60px;
+}
+.body-legalDocu .tos-content .tos-row{
+    margin-top: 40px;
+}
+.body-legalDocu .tos-content h4{
+    margin-bottom: 8px;
+    font-size: 1.6rem;
+    font-style: italic;
+    color: #10386a;
+}
+.body-legalDocu .tos-content h6{
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+    color: #10396ad0;
+}
+.body-legalDocu .tos-content p{
+    line-height: 1.8;
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: #4f4f4f;
+}
+
+/* privacy */
+.body-legalDocu .privacy-content{
+    padding-bottom: 60px;
+}
+.body-legalDocu .privacy-content .pp-row{
+    margin-top: 40px;
+}
+.body-legalDocu .privacy-content h4{
+    margin-bottom: 8px;
+    font-size: 1.6rem;
+    font-style: italic;
+    color: #10386a;
+}
+.body-legalDocu .privacy-content h6{
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+    color: #10396ad0;
+}
+.body-legalDocu .privacy-content p{
+    line-height: 1.8;
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: #4f4f4f;
+}

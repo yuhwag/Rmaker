@@ -1,0 +1,271 @@
+@font-face{
+    font-family:'antipasto-bold';
+    src: url('../../font/antipasto_bold.ttf');
+}
+/* sign in */
+.bg-blur-10 {
+    backdrop-filter: blur(10px);
+}
+.a-link:hover{
+    color: #005C97 !important;
+    transition: .25s;
+}
+.container-fluid {
+    /* background: url(../../image/backgrounds/2201_w030_n002_291b_p1_291.jpg) center no-repeat; */
+    background: url(../../image/backgrounds/6186696.jpg) center no-repeat;
+    background-size: cover;
+    height: 108vh;
+    width: 100%;
+}
+.login-wrap-form {
+    background: #ffffffa5;
+}
+.form input {
+    border-radius: 50px;
+    padding: 25px 25px 7px 25px;
+    box-shadow: 0px 5px 15px 0px #8585857d;
+}
+.form .input-placeholder {
+    background: #fff;
+    padding-bottom: 10px;
+    width: 75%;
+    color: #515151;
+    font-weight: 500;
+    position: absolute;
+    top: 16px;
+    left: 25px;
+    pointer-events: none;
+    transition: ease .25s;
+    transform-origin: left top;
+    transform: scale(1);
+}
+#emailLogin:focus+.input-placeholder,
+#emailLogin:not(:placeholder-shown)+.input-placeholder,
+#passwordLogin:focus+.input-placeholder,
+#passwordLogin:not(:placeholder-shown)+.input-placeholder{
+    background: #ffffff00;
+    color: #696969;
+    font-size: .9rem;
+    top: 7px;
+    transition: ease .25s;
+}
+.login-form{
+    z-index: 3;
+    top: 0;
+    bottom: 0;
+    transform: translateX(0%);
+    transition: ease .4s;
+}
+.login-form a{
+    text-decoration: none;
+}
+.btn-form {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    background: linear-gradient(to right, #005C97, #363795);
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    padding: 16px;
+    border: none;
+    border-radius: 40px;
+    transition: ease .3s;
+}
+.btn-form i{
+    position: relative;
+    /* z-index: 1; */
+}
+.btn-form::before{
+    content: "";
+    background: linear-gradient(to right, #FF512F, #DD2476);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    transition: ease .3s;
+}
+.btn-form:hover::before {
+    left: 0;
+    width: 100%;
+    transition: ease .3s;
+}
+.textOr {
+    color: #acacac;
+    font-style: italic;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.textOr::after {
+    content: '';
+    display: block;
+    background: #acacac;
+    height: 1px;
+    width: 80px;
+    margin: 5px 15px 0 15px;
+}
+.textOr::before {
+    content: '';
+    display: block;
+    background: #acacac;
+    height: 1px;
+    width: 80px;
+    margin: 5px 15px 0 15px;
+}
+.login-social {
+    display: flex;
+    justify-content: center;
+}
+.login-social a{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #65676a;
+    font-style: italic;
+    padding: 16px 25px;
+    border: 1px solid #65676a;
+    border-radius: 50px;
+    position: relative;
+    transition: .2s ease;
+}
+.login-social a:hover{
+    border-color: #3c6b89e1;
+    box-shadow: 0px 0px 10px 0px #3c6b89ad;
+    transition: .2s ease;
+}
+.login-social img{
+    width: 22px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 20px;
+}
+.btn-home{
+    position: absolute;
+    bottom: 30px;
+    color: #5b5b5bad;
+    font-weight: bold;
+}
+.btn-home:hover{
+    color: #5b5b5bfb;
+}
+/* sign up */
+.register-page{
+    transform: translateX(-100%);
+    transition: ease .4s;
+}
+#firstnameRegister:focus+.input-placeholder,
+#firstnameRegister:not(:placeholder-shown)+.input-placeholder,
+#lastnameRegister:focus+.input-placeholder,
+#lastnameRegister:not(:placeholder-shown)+.input-placeholder,
+#emailRegister:focus+.input-placeholder,
+#emailRegister:not(:placeholder-shown)+.input-placeholder,
+#phoneRegister:focus+.input-placeholder,
+#phoneRegister:not(:placeholder-shown)+.input-placeholder,
+#passwordRegister:focus+.input-placeholder,
+#passwordRegister:not(:placeholder-shown)+.input-placeholder{
+    background: #ffffff00;
+    color: #696969;
+    font-size: .9rem;
+    top: 7px;
+    transform-origin: left top;
+    transform: scale(0.9);
+}
+.input-placeholder.focused {
+    background: #ffffff00;
+    color: #696969;
+    font-size: .9rem;
+    top: 7px;
+    transform-origin: left top;
+    transform: scale(0.9);
+}
+
+/* ................... */
+.iti--allow-dropdown {
+    width: 100%;
+}
+.iti__flag-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0 !important;
+}
+.iti__selected-flag {
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 0 20px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+}
+.iti__country-list {
+    position: relative;
+    z-index: 1;
+    top: 58px;
+    list-style: none;
+    text-align: left;
+    padding: 0;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    border: 1px solid #CCC;
+    max-height: 200px;
+    overflow-y: scroll;
+}
+
+/* ................... */
+.logRegPage{
+    color: #fff;
+    background: url(../../image/backgrounds/gradient-blue-background-2.jpg) center no-repeat;
+    background-size: cover; 
+    width: 50%;
+    right: 0;
+    z-index: 5;
+    transition: ease .4s;
+}
+.welcome-page-title h2{
+    font-family:'antipasto-bold';
+    font-size: 2.3rem;
+    letter-spacing: 1px;
+}
+.btn-logReg{
+    background: none;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 45px;
+    margin-top: 25px;
+    border: 3px solid #fff;
+    border-radius: 50px;
+    transition: ease .25s;
+}
+.btn-logReg:hover{
+    transform: translateY(-3px);
+    box-shadow: 0px 7px 15px 0px #ffffffa6;
+    transition: ease .25s;
+}
+/* .btn-logReg:active{
+    transform: translateY(0px);
+    box-shadow: 0px 5px 5px 0px #ffffffa6;
+    transition: ease .25s;
+} */
+
+/* Responsive */
+.btn-openLogReg {
+    background: #cacaca8a;
+    color: #000;
+    padding: 8px 25px;
+    border: none;
+    transition: ease .4s;
+}
+.btn-openLogReg:hover{
+    background: linear-gradient(45deg, #1e3c72, #2a5298);
+    color: #fff;
+    text-decoration: italic;
+    transition: ease .25s;
+}

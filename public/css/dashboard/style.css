@@ -1,0 +1,502 @@
+body {
+    font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    /* background-color: #fff; */
+    /* position: relative; */
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/*  */
+.dashboard-container {
+    height: 100vh;
+    background: #edf1fd
+}
+
+/* side navigation */
+.dashboard-container .side-container {
+    height: calc(100% - 30px);
+    background: #fff;
+    margin: 15px;
+    border-radius: 10px;
+    z-index: 100;
+    transition: .35s ease;
+}
+
+.dashboard-container .side-container.nav-expanded {
+    max-width: 250px;
+    width: 250px;
+}
+
+/* expand - collapse side navigation button */
+.dashboard-container .side-container .exp-col-btn {
+    opacity: 0;
+    background-color: #fff;
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    height: 70px;
+    width: 70px;
+    display: flex;
+    transform: translateY(-50%) rotate(45deg);
+    align-items: flex-start;
+    justify-content: flex-end;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    cursor: pointer;
+    z-index: 0;
+    transition: all 0.3s ease;
+}
+.dashboard-container .side-container .exp-col-btn .fa-solid {
+    padding: 5px 8px;
+    margin-top: 6px;
+    margin-right: 6px;
+    transition: all 0.3s ease;
+}
+.dashboard-container .side-container .exp-col-btn .fa-solid.open {
+    transform: rotate(315deg);
+    transition: all 0.3s ease;
+}
+.dashboard-container .side-container .exp-col-btn .fa-solid.close {
+    transform: rotate(135deg);
+    transition: all 0.3s ease;
+}
+
+.dashboard-container .side-container:hover .exp-col-btn{
+    opacity: 1;
+    right: -20px;
+    transition: all 0.3s ease;
+}
+
+/* body side navigation */
+.dashboard-container .side-container .side-navigation{
+    background: #fff;
+    position: absolute;
+    padding: 30px 20px;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: .25s ease;
+}
+
+.dashboard-container .side-container .side-navigation ul{
+    margin: 0;
+    list-style: none;
+    padding: 0;
+}
+
+/* header */
+.dashboard-container .side-container .side-navigation ul .user-img img{
+    width: 60px;
+    height: 60px;
+    border-radius: 9px;
+}
+.dashboard-container .side-container .side-navigation ul .user-info .user-name {
+    font-size: 1.07rem;
+    font-weight: bold;
+    color: #5663a1;
+}
+.dashboard-container .side-container .side-navigation ul .user-info .user-job{
+    font-size: .72rem;
+    color: #9ea2b1;
+}
+
+/* header logo */
+.dashboard-container .side-container .side-navigation .nav-header{
+    text-decoration: none;
+    margin-bottom: 35px;
+}
+.dashboard-container .side-container .side-navigation ul .rmaker-img{
+    margin-right: 11px;
+}
+.dashboard-container .side-container .side-navigation ul .rmaker-img img{
+    width: 40px;
+    border-radius: 6px;
+}
+.dashboard-container .side-container .side-navigation ul .rmaker-img img.white-logo{
+    display: none;
+}
+.dashboard-container .side-container .side-navigation ul .rmaker-title .title {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #444757;
+    margin-bottom: 2px;
+}
+
+/*  */
+.dashboard-container .side-container .side-navigation ul>.nav-li{
+    text-decoration: none;
+    cursor: pointer;
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 10px 0px;
+    margin: 2px 0;
+    border-radius: 9px;
+    color: #7c80ae;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all .3s ease;
+}
+.dashboard-container .side-container .side-navigation ul>.nav-li:hover{
+    color: #3859d3;
+    transition: all .3s ease;
+}
+.dashboard-container .side-container .side-navigation ul>.li-active{
+    background-color: #f0f2ff;
+    color: #2451f0;
+    font-weight: 500;
+    transition: all .3s ease;
+}
+
+.dashboard-container .side-container .side-navigation ul>.nav-li>span:first-child{
+    width: 53px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* dashboard content */
+.dashboard-container .dashboard-content{
+    width: 100%;
+    overflow-y: scroll;
+}
+
+.dashboard-container .dashboard-content .container{
+    padding: 30px;
+    padding-top: 15px;
+}
+
+/* // documents // */
+.dashboard-container .dashboard-content .documents-container .header-documents,
+.dashboard-container .dashboard-content .favorites-container .head-text ,
+.dashboard-container .dashboard-content .setting-container .head-text {
+    margin-bottom: 40px;
+    color: #5c617b;
+    border-bottom: 1.5px solid #717da8b6;
+}
+.dashboard-container .dashboard-content .documents-container .header-documents .head-text{
+    padding-bottom: 10px;
+    margin: 0;
+    margin-right: 30px;
+    cursor: pointer;
+}
+.dashboard-container .dashboard-content .documents-container .header-documents .head-text.active {
+    position: relative;
+}
+.dashboard-container .dashboard-content .documents-container .header-documents .head-text.active:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    border-radius: 50px;
+    background-color: #4166eb;
+}
+
+
+.dashboard-container .dashboard-content .documents-container .list-doc>*,
+.dashboard-container .dashboard-content .favorites-container .list-doc>*{
+    width: 220px;
+    height: 310px;
+    border-radius: 10px;
+    margin-right: 50px;
+    margin-bottom: 30px;
+}
+.dashboard-container .dashboard-content .documents-container .list-doc .btn-add-new-doc{
+    border: 1px dashed #777883;
+    color: #777883;
+    text-decoration: none;
+    font-size: 1.7rem;
+    transition: all 0.25s ease;
+}
+.dashboard-container .dashboard-content .documents-container .list-doc .btn-add-new-doc:hover{
+    color: #4166eb;
+    border-color: #4166eb;
+    transition: all 0.25s ease;
+}
+
+.dashboard-container .dashboard-content .documents-container .list-doc .document,
+.dashboard-container .dashboard-content .favorites-container .list-doc .document {
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+.dashboard-container .dashboard-content .documents-container .list-doc .document .btn-edit {
+    text-decoration: none;
+    width: 100%;
+    height: calc(100% - 130px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    background: #ffffff78;
+    opacity: 0;
+    border-radius: 10px 10px 0 0;
+    transition: all .3s ease;
+}
+.dashboard-container .dashboard-content .documents-container .list-doc .document .btn-edit>p {
+    background: #3859d3;
+    padding: 7px 15px;
+    margin: 0;
+    border-radius: 50px;
+    color: #fff;
+    font-weight: 500;
+}
+.dashboard-container .dashboard-content .documents-container .list-doc .document:hover .btn-edit {
+    opacity: 1;
+    transition: all .3s ease;
+}
+.dashboard-container .dashboard-content .documents-container .list-doc .document .doc-info {
+    background-color: #fff;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: fit-content;
+    padding: 15px 15px;
+    border-radius: 0 0 10px 10px;
+}
+.dashboard-container .dashboard-content .documents-container .list-doc .document .doc-info .doc-name {
+    width: 100%;
+    height: 20px;
+    margin-right: 10px;
+    font-size: 1.05rem;
+    color: #474747;
+    overflow: hidden;
+    text-wrap: nowrap;
+}
+.dashboard-container .dashboard-content .documents-container .list-doc .document .doc-info .doc-name[contenteditable="true"]:focus{
+    border-bottom: 2px solid #1a89e4;
+    outline: none;
+}
+.dashboard-container .dashboard-content .documents-container .list-doc .document .doc-info>div>i {
+    cursor: pointer;
+    font-size: .85rem;
+    color: #474747;
+}
+.dashboard-container .dashboard-content .documents-container .list-doc .document .doc-info .doc-updated {
+    text-transform: uppercase; 
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #b7bac1;
+}
+.dashboard-container .dashboard-content .documents-container .list-doc .document .doc-info hr {
+    margin: 15px 0;
+}
+.dashboard-container .dashboard-content .documents-container .list-doc .document .doc-info .activity-btns>*{
+    cursor: pointer;
+    font-size: .9rem;
+    color: #696969;
+}
+.dashboard-container .dashboard-content .documents-container .list-doc .document .doc-info .activity-btns .btn-download>i{
+    margin-right: 4px;
+}
+.dashboard-container .dashboard-content .documents-container .list-doc .document .doc-info .activity-btns .btn-download:hover{
+    color: #1a89e4;
+    transition: all 0.2s ease;
+}
+.dashboard-container .dashboard-content .documents-container .list-doc .document .doc-info .activity-btns .btn-delete-doc{
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+.dashboard-container .dashboard-content .documents-container .list-doc .document .doc-info .activity-btns .btn-delete-doc:hover{
+    color: #D11A2A;
+    transition: all 0.2s ease;
+}
+
+/* // profile // */
+
+/* avatar profile */
+.dashboard-container .dashboard-content .profile-container .user-avatar .image{
+    width: 150px;
+    height: 150px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 7px;
+    box-shadow: 0px 7px 15px 2px #999;
+}
+.dashboard-container .dashboard-content .profile-container .user-avatar .avatar-buttons>*{
+    cursor: pointer;
+    padding: 10px 25px;
+    margin: 15px 0;
+    border-radius: 7px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+.dashboard-container .dashboard-content .profile-container .user-avatar .avatar-buttons>.change-avatar{
+    border: 2px solid #3859d3;
+    background-color: #3859d3;
+    color: #fff;
+}
+.dashboard-container .dashboard-content .profile-container .user-avatar .avatar-buttons>.delete-avatar{
+    display: block;
+    text-decoration: none;
+    border: 2px solid #5d73c457;
+    color: #3859d3;
+    transition: all 0.25s ease;
+}
+.dashboard-container .dashboard-content .profile-container .user-avatar .avatar-buttons>.delete-avatar:hover{
+    border: 2px solid #3859d3;
+    transition: all 0.25s ease;
+}
+
+/* info profile */
+.dashboard-container .dashboard-content .profile-container .inputs-info input{
+    background-color: #ffffff00;
+    padding: 10px 20px;
+    margin: 5px 0;
+    width: 100%;
+    border-radius: 7px;
+    border: 2px solid #5d73c447;
+    font-weight: 500;
+    color: #242a36;
+    outline: none;
+    transition: all 0.25s ease;
+}
+.dashboard-container .dashboard-content .profile-container .inputs-info input:focus{
+    background-color: #ffffff71;
+    border: 2px solid #3859d3;
+    transition: all 0.25s ease;
+}
+.dashboard-container .dashboard-content .profile-container .inputs-info label{
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #4f5a70;
+}
+
+/* submit form button */
+.dashboard-container .dashboard-content .profile-container .form-btns .btn-save{
+    pointer-events: none;
+    padding: 7px 30px;
+    background: #71737c;
+    border-radius: 7px;
+    border: none;
+    color: #fff;
+    font-size: 1.05rem;
+    font-weight: 500;
+    transition: all 0.25 ease;
+}
+.dashboard-container .dashboard-content .profile-container .form-btns .btn-save.input-changed{
+    pointer-events: auto;
+    background: #3859d3; 
+    transition: all 0.25 ease;
+}
+.dashboard-container .dashboard-content .profile-container .form-btns .btn-cancel{
+    cursor: pointer;
+    padding: 7px 30px;
+    background: #ffffff00;
+    border-radius: 7px;
+    border: 2px solid #5d73c467;
+    text-decoration: none;
+    color: #20347d;
+    font-size: 1.05rem;
+    font-weight: 500;
+    transition: all 0.25s ease;
+}
+.dashboard-container .dashboard-content .profile-container .form-btns .btn-cancel:hover{
+    border: 2px solid #5d73c4;
+    transition: all 0.25s ease;
+}
+
+/* // favorites // */
+
+/* template */
+.dashboard-container .dashboard-content .favorites-container .liked-doc .btn-use-template {
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: #41414152;
+    border-radius: 10px;
+    text-decoration: none;
+    opacity: 0;
+    transition: all 0.25s ease;
+}
+.dashboard-container .dashboard-content .favorites-container .liked-doc:hover .btn-use-template {
+    opacity: 1;
+    transition: all 0.25s ease;
+}
+.dashboard-container .dashboard-content .favorites-container .liked-doc .btn-use-template>p {
+    text-wrap: nowrap;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 6px 15px;
+    background: #3859d3;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+.dashboard-container .dashboard-content .favorites-container .liked-doc .btn-use-template i.fa-heart {
+    cursor: pointer;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    font-size: 1.6rem;
+    color: #fff;
+    transition: all 0.25s ease;
+}
+.dashboard-container .dashboard-content .favorites-container .liked-doc .btn-use-template i.fa-heart.liked {
+    color: crimson;
+    transition: all 0.25s ease;
+    /* color: #D11A2A; */
+}
+
+
+/* // setting // */
+
+/* button dark mode */
+.dashboard-container .dashboard-content .setting-container .setting-body .title-mode {
+    font-weight: 500;
+}
+.dashboard-container .dashboard-content .setting-container .setting-body .btn-mode {
+    cursor: pointer;
+    background-color: #ccc;
+    position: relative;
+    width: 50px;
+    height: 25px;
+    border-radius: 50px;
+    transition: all 0.35s ease;
+}
+.dashboard-container .dashboard-content .setting-container .setting-body .btn-mode .circle-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 3px;
+    background-color: #fff;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    transition: all 0.35s ease;
+}
+.dashboard-container .dashboard-content .setting-container .setting-body .btn-mode.on {
+    background-color: #3859d3;
+    transition: all 0.35s ease;
+}
+.dashboard-container .dashboard-content .setting-container .setting-body .btn-mode.on .circle-btn {
+    left: 27px;
+    transition: all 0.35s ease;
+}
+
+/* // help // */
+.dashboard-container .dashboard-content .help-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #3859d3;
+}

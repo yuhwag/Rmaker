@@ -1,0 +1,92 @@
+@media (min-width: 768px) {
+    .dashboard-container .side-container {
+        position: relative;
+        right: 0;
+        transition: .2s ease;
+    }
+    
+    .dashboard-container .side-container.nav-expanded {
+        min-width: 250px;
+        max-width: 250px;
+        width: 250px;
+    }
+    
+    .dashboard-container .side-container.nav-collapsed {
+        min-width: 100px;
+        max-width: 100px;
+        width: 100px;
+    }
+    .dashboard-container .side-container.nav-collapsed .nav-li {
+        width: fit-content;
+        display: flex;
+        justify-content: center;
+    }
+    .dashboard-container .side-container.nav-collapsed .user-info,
+    .dashboard-container .side-container.nav-collapsed .rmaker-title,
+    .dashboard-container .side-container.nav-collapsed .nav-li>span:nth-child(2) {
+        display: none;
+    }
+    .dashboard-container .side-container.nav-collapsed .nav-header {
+        justify-content: center;
+    }
+    .dashboard-container .side-container.nav-collapsed .nav-header .rmaker-img {
+        margin: 0;
+    }
+    
+    .dashboard-container .side-container.nav-collapsed .side-navigation ul>.nav-li:hover span:nth-child(2) {
+        display: block;
+        position: absolute;
+        left: 90px;
+        background: #2e344e;
+        padding: 7px 15px;
+        border-radius: 5px;
+        color: #fff;
+        font-size: .8rem;
+        white-space: nowrap;
+        transition: all 0.5s ease;
+    }
+}
+
+@media (max-width: 768px) {
+    /* button show-hide side navigation */
+    .dashboard-container .show-nav{
+        cursor: pointer;
+        background-color: #fff;
+        width: 50px;
+        height: 50px;
+        margin: 15px 30px;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #5663a1;
+        z-index: 90;
+    }
+    .dashboard-container .side-container .hide-nav{
+        cursor: pointer;
+        top: 5px;
+        right: 10px;
+        color: #38406a;
+    }
+
+    /* side navigation */
+    .dashboard-container .side-container{
+        position: absolute;
+        left: -280px;
+        transition: .35s ease;
+    }
+    .dashboard-container .side-container.nav-collapsed {
+        min-width: 250px;
+        max-width: 250px;
+        width: 250px;
+    }
+    .dashboard-container .side-container.show{
+        left: 0px;
+        transition: .35s ease;
+    }
+    
+    /* dashboard content */
+    .dashboard-container .dashboard-content{
+        margin-top: 80px;
+    }
+}

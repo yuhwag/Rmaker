@@ -1,0 +1,159 @@
+body {
+    font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    /* background-color: #fff; */
+    /* position: relative; */
+}
+/* ....................................... */
+
+/* iframe.header{
+    width: 100%;
+    height: 70px;
+    position: fixed;
+    z-index: 100;
+}
+iframe.footer{
+    width: 100%;
+    height: 530px;
+} */
+
+/* ....................................... */
+.body-aboutpage .ab-header{
+    background: url(../../image/pics-about/cheerful-diverse-friends-2.jpg) center no-repeat;
+    background-size: cover;
+    height: 350px;
+    position: relative;
+}
+.body-aboutpage .ab-header::after{
+    content: "";
+    background-color: #000000b6;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.body-aboutpage .ab-header h1{
+    padding-top: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 4rem;
+    text-align: center;
+}
+.body-aboutpage .about-content{
+    padding-bottom: 60px;
+}
+.body-aboutpage .about-content .ab-row{
+    margin-top: 40px;
+}
+.body-aboutpage .about-content h4{
+    margin-bottom: 20px;
+    font-style: italic;
+    color: #10386a;
+}
+.body-aboutpage .about-content p{
+    line-height: 1.8;
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: #4f4f4f;
+}
+
+.body-aboutpage .about-content .about-5{
+    min-height: 360px;
+}
+.body-aboutpage .about-content .about-5 .member{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #cccccc36;
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 10px 10px 15px #828282ba;
+}
+.body-aboutpage .about-content .about-5 .member .member-name{
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.body-aboutpage .about-content .about-5 .member .member-position{
+    font-weight: 500;
+    color: #8f8f8f;
+}
+.body-aboutpage .about-content .about-5 .member .btn-prev-mem{
+    width: 40px;
+    height: 40px;
+    background: #cccccc85;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    margin: 5px;
+    cursor: pointer;
+    transition: ease .25s;
+}
+.body-aboutpage .about-content .about-5 .member .btn-next-mem{
+    width: 40px;
+    height: 40px;
+    background: #cccccc85;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    margin: 5px;
+    cursor: pointer;
+    transition: ease .25s;
+}
+.body-aboutpage .about-content .about-5 .member .btn-prev-mem:hover,
+.body-aboutpage .about-content .about-5 .member .btn-next-mem:hover{
+    background: #cccccc;
+    transition: ease .25s;
+}
+.body-aboutpage .about-content .about-5 .member-pic img{
+    width: 245px;
+    height: auto;
+    /* margin-left: 40px; */
+    position: relative;
+    border-radius: 15px;
+    box-shadow: 10px 10px 15px #828282ba;
+}
+
+.body-aboutpage .about-content .about-5 .members.active{
+    display: flex !important;
+}
+.body-aboutpage .about-content .about-5 .members.active.in-l2r{
+    animation: in-left-to-right ease 1s;
+}
+.body-aboutpage .about-content .about-5 .members.active.in-r2l{    
+    animation: in-right-to-left ease 1s;
+}
+
+@keyframes in-right-to-left {
+    from { 
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to{
+        opacity: 1;    
+        transform: translateX(0px);
+    }
+    
+}
+@keyframes in-left-to-right {
+    from { 
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to{
+        opacity: 1;    
+        transform: translateX(0px);
+    }
+    
+}
