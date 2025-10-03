@@ -1,0 +1,14 @@
+
+/* // templates // */
+.dashboard-container .dashboard-content .templates-container .header-templates,
+.dashboard-container .dashboard-content .users-container .head-text ,
+.dashboard-container .dashboard-content .setting-container .head-text {
+    margin-bottom: 40px;
+    color: #5c617b;
+    border-bottom: 1.5px solid #717da8b6;
+}
+.dashboard-container .dashboard-content .templates-container .header-templates .head-text{
+    padding-bottom: 10px;
+    margin: 0;
+    margin-right: 30px;
+}

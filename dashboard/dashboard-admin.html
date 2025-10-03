@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./style-admin.css">
+    <link rel="stylesheet" href="./dark-style.css">
+    <link rel="stylesheet" href="./responsive.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/719a6dea95.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Rmaker</title>
+</head>
+
+<body>
+    <div class="container-fluid m-0 p-0 dashboard-container d-flex">
+        <div class="btn-show-hide-nav show-nav position-absolute d-md-none">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <div class="side-container nav-expanded">
+            <div class="d-none d-md-flex exp-col-btn"><i class="fa-solid fa-angle-right close"></i></div>
+            <div class="side-navigation">
+                <ul>
+                    <a href="../index.html" class="nav-header d-flex align-items-end">
+                        <div class="rmaker-img">
+                            <img class="black-logo" src="../_assets_all/imgs_pics/logo/lg-rmaker2-black.png" alt="Avatar Profile">
+                            <img class="white-logo" src="../_assets_all/imgs_pics/logo/lg-rmaker2-white.png" alt="Avatar Profile">
+                        </div>
+                        <div class="rmaker-title">
+                            <div class="title">Rmaker</div>
+                        </div>
+                    </a>
+                    <li class="templates nav-li li-active"><span class="fa-solid fa-newspaper"></span><span>Templates</span></li>
+                    <li class="users nav-li"><span class="fa-solid fa-users"></span><span>Users</span></li>
+                    <li class="profile nav-li"><span class="fa-solid fa-circle-user"></span><span>Profile</span></li>
+                    <li class="setting nav-li"><span class="fa-solid fa-gear"></span><span>Setting</span></li>
+                </ul>
+
+                <ul>
+                    <li class="help nav-li"><span class="fa-solid fa-lightbulb"></span><span>Help</span></li>
+                    <a href="../index.html" class="nav-li"><span class="fa-solid fa-right-from-bracket"></span><span>Sign Out</span></a>
+                </ul>
+            </div>
+            <div class="btn-show-hide-nav hide-nav d-md-none position-absolute"><i class="fa-solid fa-angles-left"></i></div>
+        </div>
+        <div class="dashboard-content">
+            <!-- templates section -->
+            <div class="container templates-container">
+                <div class="header-templates d-flex">
+                    <h5 class="head-text">Manage templates</h5>
+                </div>
+
+                <div class="temp-section all-section">
+                    <button class="add-template btn btn-success mb-3">Add New</button>
+                    <div class="table-responsive">
+
+                        <table class="table table-hover">
+                            <thead class="table-primary">
+                                <tr>
+                                    <th scope="col">id</th>
+                                    <th scope="col">Type</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Image</th>
+                                    <th scope="col">HTML</th>
+                                    <th scope="col">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>example</th>
+                                    <td>example</td>
+                                    <td>example</td>
+                                    <td>
+                                        <div class="showImg">
+                                            <div id="imgPreview" style="background-image: url()"></div>
+                                            <!-- No Image -->
+                                        </div>
+                                    </td>
+                                    <td> <div class="html" style="white-space: nowrap; width: 110px; overflow: hidden; text-overflow: ellipsis;">example</div></td>
+                                    <td>
+                                        <a href="" class="btn btn-primary">Edit</a>
+                                        <button class="btn btn-danger" class="del-template" onclick="deleteTemplate()">Delete</button>
+                                        <form action="" method="post" id="del-templ">
+                                            
+                                            <input type="hidden" name="t_id" value="">
+                                        </form>
+                                    </td>
+                                </tr>
+                                
+                                <!-- if empty -->
+                                <!-- <tr>
+                                    <td colspan="5">No Templates Found</td>
+                                </tr> -->
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- users -->
+            <div class="container users-container d-none">
+                <h5 class="head-text" style="padding-bottom: 10px;">Manage users</h5>
+                <div class="temp-section all-section">
+                    <button class="add-template btn btn-success mb-3">Add New</button>
+                    <div class="table-responsive">
+
+                        <table class="table table-hover">
+                            <thead class="table-primary">
+                                <tr>
+                                    <th scope="col">id</th>
+                                    <th scope="col">Avatar</th>
+                                    <th scope="col">Firstname</th>
+                                    <th scope="col">Lastname</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Password</th>
+                                    <th scope="col">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>12354648</th>
+                                    <td>
+                                        <div class="showImg">
+                                            <div id="imgPreview" style="background-image: url()"></div>
+                                            <!-- No Image -->
+                                        </div>
+                                    </td>
+                                    <td>example</td>
+                                    <td>example</td>
+                                    <td>example</td>
+                                    <td>example</td>
+                                    <td>
+                                        <a href="" class="btn btn-primary">Edit</a>
+                                        <button class="btn btn-danger" class="del-template" onclick="deleteTemplate()">Delete</button>
+                                        <form action="" method="post" id="del-templ">
+                                            
+                                            <input type="hidden" name="t_id" value="">
+                                        </form>
+                                    </td>
+                                </tr>
+                                
+                                <!-- if empty -->
+                                <!-- <tr>
+                                    <td colspan="5">No Templates Found</td>
+                                </tr> -->
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- profile section -->
+            <div class="container profile-container d-none">
+                <form action="">
+                    <div class="user-avatar d-flex align-items-center mb-4">
+                        <div class="image me-5" style="background-image: url(../_assets_all/imgs_pics/pics-about/members/3d-illustration-person-with-sunglasses.jpg)"></div>
+                        <div class="avatar-buttons">
+                            <input type="file" class="avatar-input d-none" name="avatar">
+                            <div class="change-avatar">Change picture</div>
+                            <div class="delete-avatar">Delete picture</div>
+                        </div>
+                    </div>
+                    
+                    <div class="inputs-info">
+                        <div class="user-name row">
+                            <div class="col-md-6">
+                                <label for="firstname">First name</label>
+                                <input type="text" name="firstname" id="firstname" class="mb-4" value="John">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="lastname">Last name</label>
+                                <input type="text" name="lastname" id="lastname" class="mb-4" value="Smith">
+                            </div>
+                        </div>
+                        <div class="user-email">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" id="email" class="mb-4" value="abc123@gmail.com">
+                        </div>
+                        <div class="user-phone">
+                            <label for="phone">Phone</label>
+                            <input type="phone" name="phone" id="phone" class="mb-4" value="0132456789">
+                        </div>
+                        <div class="user-address">
+                            <label for="address">Address</label>
+                            <input type="address" name="address" id="address" class="mb-4" value="19 Nguyen Huu Tho, HCM City.">
+                        </div>
+                    </div>
+                    <div class="form-btns d-flex justify-content-end mt-3">
+                        <button type="submit" class="btn-save me-4">Save changes</button>
+                        <div class="btn-cancel">Cancel</div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- setting -->
+            <div class="container setting-container d-none">
+                <h5 class="head-text" style="padding-bottom: 10px;">Setting</h5>
+                <div class="setting-body">
+                    <div class="row">
+                        <div class="col-md-4 dark-mode d-flex justify-content-between align-items-center">
+                            <div class="title-mode">Dark mode</div>
+                            <div class="btn-mode">
+                                <div class="circle-btn"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- help -->
+            <div class="container help-container d-none">
+                <div class="notice">
+                    <h4 class="notice-text">Sorry, this page is not available now!</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="./script.js"></script>
+<script>
+    
+</script>
+
+</html>

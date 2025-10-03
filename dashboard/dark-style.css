@@ -1,0 +1,70 @@
+@media (min-width: 768px) {
+    .dashboard-container.dark .side-container.nav-collapsed .side-navigation ul>.nav-li:hover span:nth-child(2) {
+        background: #2f3d6c;
+    }
+}
+@media (max-width: 768px) {
+    .dashboard-container.dark .show-nav {
+        background-color: #2e344c;
+        color: #fff;
+    }
+    .dashboard-container.dark .side-container .hide-nav {
+        color: #fff;
+    }
+}
+/* dark mode */
+.dashboard-container.dark {
+    background: #171c2d;
+}
+.dashboard-container.dark .side-container,
+.dashboard-container.dark .side-container .side-navigation {
+    background-color: #2e344c;
+}
+.dashboard-container.dark .side-container .exp-col-btn {
+    background-color: #2e344c;
+    color: #fff;
+}
+.dashboard-container.dark .side-container .side-navigation ul .user-info .user-name,
+.dashboard-container.dark .side-container .side-navigation ul .rmaker-title .title {
+    color: #fff;
+}
+.dashboard-container.dark .side-container .side-navigation ul .rmaker-img img.white-logo{
+    display: block;
+}
+.dashboard-container.dark .side-container .side-navigation ul .rmaker-img img.black-logo{
+    display: none;
+}
+.dashboard-container.dark .side-container .side-navigation ul>.li-active {
+    background-color: #2f3d6c;
+    color: #fff;
+}
+.dashboard-container.dark .side-container .side-navigation ul>.nav-li:hover{
+    color: #ffffff94;
+}
+.dashboard-container.dark .dashboard-content .container,
+.dashboard-container.dark .dashboard-content .container .head-text,
+.dashboard-container.dark .dashboard-content .profile-container .inputs-info input,
+.dashboard-container.dark .dashboard-content .profile-container .form-btns .btn-cancel
+{
+    color: #fff;
+}
+.dashboard-container.dark .dashboard-content .documents-container .header-documents .head-text.active:after{
+    background-color: #fff;
+}
+.dashboard-container.dark .dashboard-content .documents-container .list-doc .btn-add-new-doc:hover {
+    color: #fff;
+    border-color: #fff;
+}
+.dashboard-container.dark .dashboard-content .profile-container .user-avatar .avatar-buttons>.delete-avatar {
+    border: 2px solid #5d73c457;
+    color: #ffffffcc;
+}
+.dashboard-container.dark .dashboard-content .profile-container .user-avatar .avatar-buttons>.delete-avatar:hover,
+.dashboard-container.dark .dashboard-content .profile-container .form-btns .btn-cancel:hover {
+    border: 2px solid #fff;
+    color: #fff;
+}
+.dashboard-container.dark .dashboard-content .profile-container .inputs-info input:focus {
+    background-color: #ffffff14;
+    border: 2px solid #ffffffa5;
+}

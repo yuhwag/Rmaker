@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./positionResponsive.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+    <title>Rmaker</title>
+
+    <style>
+        @font-face{
+            font-family:'antipasto-bold';
+            src: url('../_assets_all/font/antipasto_bold.ttf');
+        }
+        /* sign in */
+        .bg-blur-10 {
+            backdrop-filter: blur(10px);
+        }
+        .a-link:hover{
+            color: #005C97 !important;
+            transition: .25s;
+        }
+        .container-fluid {
+            background: url(../_assets_all/imgs_pics/backgrounds/2201_w030_n002_291b_p1_291.jpg) center no-repeat;
+            background-size: cover;
+            height: 100vh;
+            width: 100%;
+        }
+        .login-wrap-form {
+            background: #ffffffa5;
+        }
+        .form input {
+            border-radius: 50px;
+            padding: 25px 25px 7px 25px;
+            box-shadow: 0px 5px 15px 0px #8585857d;
+        }
+        .form .input-placeholder {
+            background: #fff;
+            padding-bottom: 10px;
+            width: 75%;
+            color: #515151;
+            font-weight: 500;
+            position: absolute;
+            top: 16px;
+            left: 25px;
+            pointer-events: none;
+            transition: ease .25s;
+            transform-origin: left top;
+            transform: scale(1);
+        }
+        #emailLogin:focus+.input-placeholder,
+        #emailLogin:not(:placeholder-shown)+.input-placeholder,
+        #passwordLogin:focus+.input-placeholder,
+        #passwordLogin:not(:placeholder-shown)+.input-placeholder{
+            background: #ffffff00;
+            color: #696969;
+            font-size: .9rem;
+            top: 7px;
+            transition: ease .25s;
+        }
+        .login-form{
+            z-index: 3;
+            top: 0;
+            bottom: 0;
+            transform: translateX(0%);
+            transition: ease .4s;
+        }
+        .login-form a{
+            text-decoration: none;
+        }
+        .btn-form {
+            position: relative;
+            overflow: hidden;
+            display: block;
+            background: linear-gradient(to right, #005C97, #363795);
+            color: #fff;
+            font-weight: bold;
+            text-decoration: none;
+            text-align: center;
+            padding: 16px;
+            border-radius: 40px;
+            transition: ease .3s;
+        }
+        .btn-form i{
+            position: relative;
+            z-index: 1;
+        }
+        .btn-form::before{
+            content: "";
+            background: linear-gradient(to right, #FF512F, #DD2476);
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            width: 0;
+            transition: ease .3s;
+        }
+        .btn-form:hover::before {
+            left: 0;
+            width: 100%;
+            transition: ease .3s;
+        }
+        .textOr {
+            color: #acacac;
+            font-style: italic;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .textOr::after {
+            content: '';
+            display: block;
+            background: #acacac;
+            height: 1px;
+            width: 80px;
+            margin: 5px 15px 0 15px;
+        }
+        .textOr::before {
+            content: '';
+            display: block;
+            background: #acacac;
+            height: 1px;
+            width: 80px;
+            margin: 5px 15px 0 15px;
+        }
+        .login-social {
+            display: flex;
+            justify-content: center;
+        }
+        .login-social img{
+            width: 30px;
+            margin: 0 15px;
+        }
+        .btn-home{
+            position: absolute;
+            bottom: 30px;
+            color: #5b5b5bad;
+            font-weight: bold;
+        }
+        .btn-home:hover{
+            color: #5b5b5bfb;
+        }
+        /* sign up */
+        .register-page{
+            transform: translateX(-100%);
+            transition: ease .4s;
+        }
+        #firstnameRegister:focus+.input-placeholder,
+        #firstnameRegister:not(:placeholder-shown)+.input-placeholder,
+        #lastnameRegister:focus+.input-placeholder,
+        #lastnameRegister:not(:placeholder-shown)+.input-placeholder,
+        #emailRegister:focus+.input-placeholder,
+        #emailRegister:not(:placeholder-shown)+.input-placeholder,
+        #phoneRegister:focus+.input-placeholder,
+        #phoneRegister:not(:placeholder-shown)+.input-placeholder,
+        #passwordRegister:focus+.input-placeholder,
+        #passwordRegister:not(:placeholder-shown)+.input-placeholder{
+            background: #ffffff00;
+            color: #696969;
+            font-size: .9rem;
+            top: 7px;
+            transform-origin: left top;
+            transform: scale(0.9);
+        }
+        .input-placeholder.focused {
+            background: #ffffff00;
+            color: #696969;
+            font-size: .9rem;
+            top: 7px;
+            transform-origin: left top;
+            transform: scale(0.9);
+        }
+        
+        /* ................... */
+        .iti--allow-dropdown {
+            width: 100%;
+        }
+        .iti__flag-container {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0 !important;
+        }
+        .iti__selected-flag {
+            position: absolute;
+            z-index: 1;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            padding: 0 20px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+        }
+        .iti__country-list {
+            position: relative;
+            z-index: 1;
+            top: 58px;
+            list-style: none;
+            text-align: left;
+            padding: 0;
+            box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+            background-color: white;
+            border: 1px solid #CCC;
+            max-height: 200px;
+            overflow-y: scroll;
+        }
+
+        /* ................... */
+        .logRegPage{
+            color: #fff;
+            background: url(../_assets_all/imgs_pics/backgrounds/gradient-blue-background-2.jpg) center no-repeat;
+            background-size: cover; 
+            width: 50%;
+            right: 0;
+            z-index: 5;
+            transition: ease .4s;
+        }
+        .welcome-page-title h2{
+            font-family:'antipasto-bold';
+            font-size: 2.3rem;
+            letter-spacing: 1px;
+        }
+        .btn-logReg{
+            background: none;
+            color: #fff;
+            font-weight: bold;
+            padding: 10px 45px;
+            margin-top: 25px;
+            border: 3px solid #fff;
+            border-radius: 50px;
+            transition: ease .25s;
+        }
+        .btn-logReg:hover{
+            background: crimson;
+            transform: translateY(-3px);
+            box-shadow: 0px 7px 15px 0px #ffffffa6;
+            transition: ease .25s;
+        }
+        .btn-logReg:active{
+            background: crimson;
+            transform: translateY(0px);
+            box-shadow: 0px 5px 5px 0px #ffffffa6;
+            transition: ease .25s;
+        }
+        
+        /* Responsive */
+        .btn-openLogReg {
+            background: #cacaca8a;
+            color: #000;
+            padding: 8px 25px;
+            border: none;
+            transition: ease .4s;
+        }
+        .btn-openLogReg:hover{
+            background: linear-gradient(45deg, #1e3c72, #2a5298);
+            color: #fff;
+            text-decoration: italic;
+            transition: ease .25s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid p-3">
+        <div class="row w-100 h-100 m-0 justify-content-center align-items-center">
+            <div class="col-md"></div>
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="row position-relative" style="border-radius: 15px;overflow: hidden;">
+                    <!-- Sign in form -->
+                    <div class="col-lg-6 py-5 px-4 login-form form position-mx-lg-absolute" style="background: #fff;">
+                        <h3 class="text-center mb-1" id="sign.in" style="letter-spacing: 2px;"><i>Sign In</i></h3>
+                        <p class="text-center mb-5" style="letter-spacing: 1px; color: #8c8c8c;"><i>using your account</i></p>
+
+                        <div class="mb-4 position-relative">
+                            <input type="email" class="form-control" id="emailLogin" placeholder="example@gmail.com">
+                            <span class="input-placeholder">Email</span>
+                        </div>
+                        <div class="mb-3 position-relative">
+                            <input type="password" class="form-control" id="passwordLogin" placeholder="Enter your password">
+                            <span class="input-placeholder">Password</span>
+                            <i class="showHidePass position-absolute fa fa-eye" aria-hidden="true" style="top: 20px;right: 30px;cursor: pointer;color: #565656;"></i>
+                        </div>
+                        <div class="text-center">
+                            <a href="#" class="a-link" style="color: #8c8c8c;">Forgot your password?</a>
+                        </div>
+                        <div class="mt-4">
+                            <a class="btn-form btn-login w-100" href="#"><i>SIGN IN</i></a>
+                        </div>
+                        <div class="mt-3 text-center">
+                            <p class="textOr text-center">or continue with:</p>
+                            <div class="login-social">
+                                <a href="#">
+                                    <img src="../_assets_all/imgs_pics/logo/google-logo.png" alt="Google">
+                                </a>
+                                <a class="d-flex align-items-center" href="#">
+                                    <img src="../_assets_all/imgs_pics/logo/logo-facebook.png" alt="Facebook">
+                                </a>
+                            </div>
+                        </div>
+
+                        <a href="../home/home.html" class="btn-home"><i class="fa fa-long-arrow-left"></i> Home</a>
+                        <button class="btn-openLogReg d-lg-none position-mx-lg-absolute" style="top: 42px; right: 0; border-radius: 50px 0 0 50px;">
+                            Sign Up <i class='fa fa-long-arrow-right' aria-hidden='true'></i>
+                        </button>
+                    </div>
+                    <!-- Sign up form -->
+                    <div class="col-lg-6 py-5 px-4 register-form form" style="background: #fff;">
+                        <h3 class="text-center mb-1" style="letter-spacing: 2px;"><i>Sign Up</i></h3>
+                        <p class="text-center mb-5" style="letter-spacing: 1px; color: #8c8c8c;"><i>use your email to create a new account</i></p>
+
+                        <div class="row mb-4 position-relative d-flex">
+                            <div class="col-5 pe-0 position-relative">
+                                <input type="text" class="form-control" id="firstnameRegister" placeholder="ex: John">
+                                <span class="input-placeholder" style="width: 60%;left: calc(var(--bs-gutter-x)*.5 + 25px);">Firstname</span>
+                            </div>
+                            <div class="col-7 position-relative">
+                                <input type="text" class="form-control" id="lastnameRegister" placeholder="ex: Smith">
+                                <span class="input-placeholder" style="width: 60%;left: calc(var(--bs-gutter-x)*.5 + 25px);">Lastname</span>
+                            </div>
+                        </div>
+                        <div class="mb-4 position-relative">
+                            <input type="email" class="form-control" id="emailRegister" placeholder="example@gmail.com">
+                            <span class="input-placeholder">Email</span>
+                        </div>
+                        <div class="mb-4 position-relative">
+                            <input type="tel" class="form-control" id="phoneRegister" placeholder="Enter your phone number" style="padding-left: 25px;">
+                            <span class="input-placeholder plhPhone">Phone</span>
+                        </div>
+                        <div class="mb-3 position-relative">
+                            <input type="password" class="form-control" id="passwordRegister" placeholder="Enter your password">
+                            <span class="input-placeholder">Password</span>
+                            <i class="showHidePass position-absolute fa fa-eye" aria-hidden="true" style="top: 20px;right: 30px;cursor: pointer;color: #565656;"></i>
+                        </div>
+
+                        <div class="mt-4">
+                            <a class="btn-form btn-register w-100" href="#"><i>CREATE ACCOUNT</i></a>
+                        </div>
+                    </div>
+
+                    <div class="logRegPage d-none d-lg-flex flex-column justify-content-center align-items-center position-absolute top-0 bottom-0">
+                        <div class="logo d-flex align-items-end mb-4">
+                            <img src="../_assets_all/imgs_pics/logo/lg-rmaker2-white.png" alt="Rmaker" class="me-2" style="width:65px; padding-bottom: 15px;">
+                            <!-- <p style="font-family: Courier, monospace; font-size: 2rem; font-weight: bold; margin: 0; color: #fff; letter-spacing: 1px;">maker</p> -->
+                        </div>
+                        <div class="welcome-page-title text-center w-100 px-2">
+                            <h2>Welcome Back!</h2>
+                            <p style="font-size: 1.2rem;"><i>To keep with us please sign in with your personal info.</i></p>
+                        </div>
+                        <button class="btn-logReg">Sign Up <i class="fa fa-long-arrow-right" aria-hidden="true"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md"></div>
+        </div>
+    </div>
+
+</body>
+<script>
+
+    const showHidePassword = document.querySelectorAll('.showHidePass');
+    const passLog = document.getElementById('passwordLogin');
+    const passReg = document.getElementById('passwordRegister');
+    showHidePassword[0].addEventListener('click', ()=>{
+        showHidePassword[0].classList.toggle('fa-eye');
+        showHidePassword[0].classList.toggle('fa-eye-slash');
+        if(showHidePassword[0].classList.contains('fa-eye-slash')){
+            passLog.type = 'text';
+        } else {
+            passLog.type = 'password';
+        }
+    });
+    showHidePassword[1].addEventListener('click', ()=>{
+        showHidePassword[1].classList.toggle('fa-eye');
+        showHidePassword[1].classList.toggle('fa-eye-slash');
+        if(showHidePassword[1].classList.contains('fa-eye-slash')){
+            passReg.type = 'text';
+        } else {
+            passReg.type = 'password';
+        }
+    });
+
+    const btnLogReg = document.querySelector('.btn-logReg');
+    const LogRegPage = document.querySelector('.logRegPage');
+    const welPageTitle = document.querySelector('.welcome-page-title');
+    btnLogReg.addEventListener('click', ()=>{
+        LogRegPage.classList.toggle('register-page');
+        if(LogRegPage.classList.contains('register-page')){
+            welPageTitle.innerHTML= "<h2>Welcome to Rmaker!</h2>" +
+                                    "<p class='text-center' style='font-size: 1.2rem;'><i>Enter your personal details and let's make your own Resume with us.</i></p>";
+            btnLogReg.innerHTML= "<i class='fa fa-long-arrow-left' aria-hidden='true'></i> Sign In";
+        } else {
+            welPageTitle.innerHTML= "<h2>Welcome Back!</h2>" +
+                                    "<p class='text-center' style='font-size: 1.2rem;'><i>To keep with us please sign in with your personal info.</i></p>";
+            btnLogReg.innerHTML= "Sign Up <i class='fa fa-long-arrow-right' aria-hidden='true'></i>";
+        }
+    });
+
+    const phoneInputField = document.querySelector('#phoneRegister');
+    const phoneInputLabel = document.querySelector('.plhPhone');
+    const phoneInput = window.intlTelInput(phoneInputField, {
+        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+    });
+
+    phoneInputField.addEventListener("focus", () => {
+        phoneInputLabel.classList.add("focused");
+        const selectedFlag = document.querySelector('.iti__selected-flag');
+        let titSplited = selectedFlag.title.split(" ");
+        let phoneCode = titSplited[titSplited.length-1];
+        if (phoneInputField.value === "" || phoneInputField.value.charAt(phoneInputField.value.length-2) === ")") {
+            phoneInputField.value = `(${phoneCode}) `;
+        }
+    });
+
+    phoneInputField.addEventListener("blur", () => {
+        if (phoneInputField.value === "" || phoneInputField.value.charAt(phoneInputField.value.length-2) === ")") {
+            phoneInputLabel.classList.remove("focused");
+        }
+    });
+
+    // responsive
+    const btnOpenLogReg = document.querySelector('.btn-openLogReg');
+    const loginForm = document.querySelector('.login-form');
+    btnOpenLogReg.addEventListener("click", () => {
+        loginForm.classList.toggle('showRegister-lg');
+        if(loginForm.classList.contains('showRegister-lg')) {
+            btnOpenLogReg.style = "top: 42px; right: -109px; border-radius: 0 50px 50px 0;";
+            btnOpenLogReg.innerHTML = "<i class='fa fa-long-arrow-left' aria-hidden='true'></i> Sign In";
+        } else {
+            btnOpenLogReg.style = "top: 42px; right: 0; border-radius: 50px 0 0 50px;";
+            btnOpenLogReg.innerHTML = "Sign Up <i class='fa fa-long-arrow-right' aria-hidden='true'></i>";
+        }
+    })
+</script>
+</html>
