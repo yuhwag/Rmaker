@@ -7,7 +7,7 @@ body {
 }
 
 .background-world-map{
-    background: url(../_assets_all/imgs_pics/pics-contact/world-map.png) top right no-repeat;
+    background: url(../assets/imgs_pics/pics-contact/world-map.png) top right no-repeat;
     opacity: .3;
     position: absolute;
     top: 0;
